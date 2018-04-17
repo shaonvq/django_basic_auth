@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends "users_app/base.html" %}
+{% block body_block %}
+    <a href="{% url 'users_app:register' %}"></a>
+    <form action="{% url 'users_app:user_login' %}" method="POST">
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" name="username" placeholder="Username">
+        <label for="password">Password:</label>
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit" value="Login">
+    </form>
+{% endblock %}
